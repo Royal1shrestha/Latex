@@ -1,0 +1,124 @@
+\newpage
+
+\section{SYSTEM DESIGN AND ARCHITECTURE}
+\subsection{System Block Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Systemdiagram.png}
+    \caption{System block diagram}
+    \label{Figure 2: System Block Diagram}
+\end{figure}
+
+\newpage
+\subsection{Use Case Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Usecase.drawio (1).png}
+    \caption{Usecase diagram}
+    \label{Figure 3: Usecase Diagram}
+\end{figure}
+
+\newpage
+\subsection{Data Flow Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{DFD0.png}
+    \caption{DFD level 0}
+    \label{Figure 4: DFD Level 0}
+\end{figure}
+
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{DFD1.drawio.png}
+    \caption{DFD level 1}
+    \label{Figure 5: DFD Level 1}
+\end{figure}
+
+\newpage
+\subsection{Activity Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Untitled Diagram.drawio (2).png}
+    \caption{Activity diagram}
+    \label{Figure 6: Activity Diagram}
+\end{figure}
+
+\newpage
+\subsection{Sequential Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{Sequential.drawio.png}
+    \caption{Sequential diagram}
+    \label{Figure 7: Sequential Diagram}
+\end{figure}
+
+\newpage
+\subsection{Class Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{class.drawio (3).png}
+    \caption{Class diagram}
+    \label{Figure 8: Class Diagram}
+\end{figure}
+
+
+\newpage
+\subsection{ER Diagram}
+\vspace{1in}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{er.drawio.png}
+    \caption{Entity-Relationship diagram}
+    \label{Figure 9: Entity-Relationship Diagram}
+\end{figure}
+
+\newpage
+\subsection{Test Case}
+\vspace{0.5in}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        Module/Epic: & Login & ~ \\ \hline
+        User Story: & ID: N2 & Only logged user can book the charger \\ \hline
+        Test Scenario: & ID: S1 & User must log in to the app to book the charger at the station \\ \hline
+        ~ & ID: S2 & User can view main page without login  \\ \hline
+        ~ & ID: S3 & User must provide valid email and phone number while logging \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+\begin{landscape}
+    \begin{table}[h]
+\centering
+\begin{tabular}{|c|p{3cm}|p{2.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+Scenario Id & Test Objectives & Pre-condition & Test Steps & Test Data & Expected Outcome \\
+\hline
+S1 & New user wants to book a charger at the station who hasn't logged in & User must be logged in &  User should click the "Book" button if they want to book the charger
+ & "Please log in to book the charger" message will be displayed & User should be directed to the login page \\
+\hline
+S2 & Logged in user wants to book the charger & User must be logged in & \begin{enumerate}
+    \item Input correct Email or phone number
+    \item Input Correct Password
+    \item Click "Sign In"
+\end{enumerate} & Email: example@gmail.com Phone: 98000000  Password: correctPassword & On clicking "Book" button, user should be able to check availability and book the charger \\
+\hline
+S3 & Check if user is not logged in & User should be in main page & User can view availabilty and specification of charger & User can search for the type of charger & Book the charger \\
+\hline
+S4 & System behavior when correct username and incorrect email/phone number is entered by a new user & User must be in Login Page & \begin{enumerate}
+    \item Input Incorrect Email or phone number
+    \item Input Correct Password
+    \item Click "Sign In"
+\end{enumerate} & Email: example.com (same email which is already taken) Phone: 98000000  Password: IncorrectPassword & Incorrect email and phone number should display an error message: "Please enter a valid email address or phone number" \\
+\hline
+\end{tabular}
+\end{table}
+\end{landscape}

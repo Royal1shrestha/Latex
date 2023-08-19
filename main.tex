@@ -1,0 +1,86 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx} 
+\usepackage{geometry}
+\usepackage[acronym]{glossaries}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{lscape}
+\usepackage{tocloft}
+\usepackage{times}
+
+\newgeometry{
+top=1.25in,
+bottom=1.25in,
+left=1.5in,
+right=1.25in,
+headheight=0.5in, 
+footskip=0.5in
+}
+
+% Format for \section
+\titleformat{\section}
+  {\fontsize{16pt}{18pt}\bfseries} % 16pt size, 18pt baseline skip, bold font
+  {} % No additional code after title
+
+% Format for \subsection
+\titleformat{\subsection}
+  {\fontsize{14pt}{16pt}\bfseries} % 14pt size, 16pt baseline skip, bold font
+  {} % No additional code after title
+
+% Format for \subsubsection
+\titleformat{\subsubsection}
+  {\fontsize{13pt}{15pt}\bfseries} % 13pt size, 15pt baseline skip, bold font
+  {} % No additional code after title
+
+% Set line spacing to 1.5
+\onehalfspacing
+
+% Set paragraph spacing to 18pt
+\setlength{\parskip}{18pt}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Dotted line for sections
+% Add similar lines for other section levels if needed
+
+\begin{document}
+\input{sec/coverpage}
+\clearpage
+\input{sec/Titlepage}
+\clearpage
+
+\pagenumbering{roman}
+
+\input{sec/Abstract}
+
+\newpage
+{
+  \setlength{\parskip}{0em}
+  \renewcommand\contentsname{TABLE OF CONTENTS} 
+  \tableofcontents 
+  \addcontentsline{toc}{section}{TABLE OF CONTENTS}
+}
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{LIST OF FIGURES}
+
+\newpage
+    \input{sec/Abbreviation}
+    \addcontentsline{toc}{section}{LIST OF ABBREVIATIONS}
+
+\input{sec/Introduction}
+
+\input{sec/Literature_Review}
+
+\input{sec/Feasibilitytest}
+
+\input{sec/Proposed_Methodology}
+
+\input{sec/SD&A}
+
+\input{sec/Results}
+
+\input{sec/References}
+
+\end{document}
